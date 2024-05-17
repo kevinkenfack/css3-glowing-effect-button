@@ -1,0 +1,97 @@
+/*
+  Theme Name: CSS3 Glowing Effect Button
+  Author: Kevin Kenfack
+  Author URI: https://www.facebook.com/kevinkenfackjoel
+  Version: 1.0
+*/
+/************ TABLE OF CONTENTS ***************
+
+  01. Button
+  
+***********************************************/
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #000;
+}
+/* 01. Button */
+#btn-gra {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  height: 60px;
+  width: 200px;
+  -webkit-transform: translate(-50%,-50%);
+          transform: translate(-50%,-50%);
+  text-align: center;
+  text-decoration: none;
+  line-height: 60px;
+  color: #fff;
+  text-transform: uppercase;
+  font-size: 20px;
+  box-sizing: border-box;
+  background: -webkit-linear-gradient(left, #03a9f4, #f441a5, #ffeb3b, #03a9f4);
+  background: linear-gradient(90deg, #03a9f4, #f441a5, #ffeb3b, #03a9f4);
+  background-size: 400%;
+  border-radius: 30px;
+  z-index: 1;
+  font-weight: 700;
+  font-family: 'Roboto', sans-serif;
+}
+#btn-gra:hover{
+  color: #fff;
+  text-decoration: none;
+  -webkit-animation: animate 8s linear infinite;
+          animation: animate 8s linear infinite;
+}
+@-webkit-keyframes animate
+{
+  0%
+  {
+    background-position: 0%;
+  }
+  100%
+  {
+    background-position: 400%;
+  }
+}
+@keyframes animate
+{
+  0%
+  {
+    background-position: 0%;
+  }
+  100%
+  {
+    background-position: 400%;
+  }
+}
+#btn-gra::before {
+  content: '';
+  position: absolute;
+  top: -5px;
+  left: -5px;
+  bottom: -5px;
+  right: -5px;
+  z-index: -1;
+  background: -webkit-linear-gradient(left, #03a9f4, #f441a5, #ffeb3b, #03a9f4);
+  background: linear-gradient(90deg, #03a9f4, #f441a5, #ffeb3b, #03a9f4);
+  background-size: 400%;
+  border-radius: 40px;
+  filter: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg"><filter id="filter"><feGaussianBlur stdDeviation="20" /></filter></svg>#filter');
+  -webkit-filter: blur(20px);
+          filter: blur(20px);
+  opacity: 0;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+#btn-gra:hover::before {
+  filter: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg"><filter id="filter"><feGaussianBlur stdDeviation="20" /></filter></svg>#filter');
+  -webkit-filter: blur(20px);
+          filter: blur(20px);
+  opacity: 1;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+  -webkit-animation: animate 8s linear infinite;
+          animation: animate 8s linear infinite;
+}

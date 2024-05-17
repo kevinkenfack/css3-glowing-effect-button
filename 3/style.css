@@ -1,0 +1,147 @@
+/*
+  Theme Name: CSS3 Glowing Effect Button
+  Author: Kevin Kenfack
+  Author URI: https://www.facebook.com/kevinkenfackjoel
+  Version: 1.0
+*/
+/************ TABLE OF CONTENTS ***************
+
+  01. Button
+  
+***********************************************/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html, 
+body {
+  display: -ms-grid;
+  display: grid;
+  height: 100%;
+  place-items: center;
+  background-color: #000;
+}
+/* 01. Button */
+.center {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  text-align: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+.outer {
+  position: relative;
+  margin: 0 50px;
+  background-color: #111;
+}
+.button {
+  height: 70px;
+  width: 220px;
+  border-radius: 50px;
+}
+.circle {
+  height: 200px;
+  width: 200px;
+  border-radius: 50%;
+}
+.outer button, 
+.outer span{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+.outer button {
+  background-color: #111;
+  color: #f2f2f2;
+  outline: none;
+  border: none;
+  font-size: 20px;
+  z-index: 9;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+.button button {
+  height: 60px;
+  width: 210px;
+  border-radius: 50px;
+  font-family: 'Roboto', sans-serif;
+}
+.circle button {
+  height: 180px;
+  width: 180px;
+  border-radius: 50%;
+  font-family: 'Roboto', sans-serif;
+}
+.outer span {
+  height: 100%;
+  width: 100%;
+  background: inherit;
+}
+.button span {
+  border-radius: 50px;
+}
+.circle span {
+  border-radius: 50%;
+}
+.outer:hover span:nth-child(1) {
+  filter: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg"><filter id="filter"><feGaussianBlur stdDeviation="7" /></filter></svg>#filter');
+  -webkit-filter: blur(7px);
+          filter: blur(7px);
+}
+.outer:hover span:nth-child(2) {
+  filter: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg"><filter id="filter"><feGaussianBlur stdDeviation="14" /></filter></svg>#filter');
+  -webkit-filter: blur(14px);
+          filter: blur(14px);
+}
+.outer:hover {
+  background: -webkit-linear-gradient(#14ffe9, #ffeb3b, #ff00e0);
+  background: linear-gradient(#14ffe9, #ffeb3b, #ff00e0);
+  -webkit-animation: rotate 1.5s linear infinite;
+          animation: rotate 1.5s linear infinite;
+}
+@-webkit-keyframes rotate {
+  0% {
+    filter: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg"><filter id="filter"><feColorMatrix type="hueRotate" color-interpolation-filters="sRGB" values="0" /></filter></svg>#filter');
+    -webkit-filter: hue-rotate(0deg);
+            filter: hue-rotate(0deg);
+  }
+  100% {
+    filter: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg"><filter id="filter"><feColorMatrix type="hueRotate" color-interpolation-filters="sRGB" values="360" /></filter></svg>#filter');
+    -webkit-filter: hue-rotate(360deg);
+            filter: hue-rotate(360deg);
+  }
+}
+@keyframes rotate {
+  0% {
+    filter: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg"><filter id="filter"><feColorMatrix type="hueRotate" color-interpolation-filters="sRGB" values="0" /></filter></svg>#filter');
+    -webkit-filter: hue-rotate(0deg);
+            filter: hue-rotate(0deg);
+  }
+  100% {
+    filter: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg"><filter id="filter"><feColorMatrix type="hueRotate" color-interpolation-filters="sRGB" values="360" /></filter></svg>#filter');
+    -webkit-filter: hue-rotate(360deg);
+            filter: hue-rotate(360deg);
+  }
+}
+@media (max-width: 640px) {
+  .center {
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .outer {
+    margin: 50px 0;
+  }
+}

@@ -1,0 +1,56 @@
+/*
+  Theme Name: CSS3 Glowing Effect Button
+  Author: Kevin Kenfack
+  Author URI: https://www.facebook.com/kevinkenfackjoel
+  Version: 1.0
+*/
+/************ TABLE OF CONTENTS ***************
+
+  01. Glowing
+  
+***********************************************/
+body {
+background-color: #000;
+}
+/* 01. Glowing */
+.glowing {
+    text-transform: uppercase;
+    color: #fff;
+    font-size: 4em;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%,-50%);
+            transform: translate(-50%,-50%);
+    margin: 0;
+    text-shadow: 0px -1px 2px #fff, 0px -3px 6px rgba(242,125,12,1), 0px -6px 12px rgba(255,150,100,1), 0px -10px 20px rgba(242,125,12,1), 0px -15px 30px rgba(255,50,50,1), 0px -21px 42px rgba(240,127,19,1);
+    -webkit-animation: effect 0.01s ease infinite, colorChange 10s linear infinite;
+            animation: effect 0.01s ease infinite, colorChange 10s linear infinite;
+  font-family: 'Roboto', sans-serif;
+}
+@-webkit-keyframes effect {
+  50% {
+    text-shadow:0px -4px 8px #fff,
+    0px -12px 24px rgba(242,125,12,1),
+    0px -24px 48px rgba(255,150,100,1),
+    0px -40px 80px rgba(242,125,12,1),
+    0px -60px 120px rgba(255,50,50,1),
+    0px -84px 168px rgba(240,127,19,1);
+  }
+}
+@keyframes effect {
+  50% {
+    text-shadow:0px -4px 8px #fff,
+    0px -12px 24px rgba(242,125,12,1),
+    0px -24px 48px rgba(255,150,100,1),
+    0px -40px 80px rgba(242,125,12,1),
+    0px -60px 120px rgba(255,50,50,1),
+    0px -84px 168px rgba(240,127,19,1);
+  }
+}
+@-webkit-keyframes colorChange {
+  to {filter: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg"><filter id="filter"><feColorMatrix type="hueRotate" color-interpolation-filters="sRGB" values="360" /></filter></svg>#filter');-webkit-filter:hue-rotate(360deg);filter:hue-rotate(360deg)}
+}
+@keyframes colorChange {
+  to {filter: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg"><filter id="filter"><feColorMatrix type="hueRotate" color-interpolation-filters="sRGB" values="360" /></filter></svg>#filter');-webkit-filter:hue-rotate(360deg);filter:hue-rotate(360deg)}
+}

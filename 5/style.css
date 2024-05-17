@@ -1,0 +1,73 @@
+/*
+  Theme Name: CSS3 Glowing Effect Button
+  Author: Kevin Kenfack
+  Author URI: https://www.facebook.com/kevinkenfackjoel
+  Version: 1.0
+*/
+/************ TABLE OF CONTENTS ***************
+
+  01. Button
+  
+***********************************************/
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #111;
+}
+.button-area {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%)
+}
+button:focus {
+    outline: none;
+}
+/* 01. Button */
+.button {
+  background-color: #1c87c9;
+  border-radius: 30px;
+  border: none;
+  color: #eee;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 16px;
+  text-align: center;
+  text-decoration: none;
+  width: 144px;
+  height: 42px;
+  font-family: 'Roboto', sans-serif;
+}
+.button {
+  -webkit-animation: glowing 1300ms infinite;
+          animation: glowing 1300ms infinite;
+}
+@-webkit-keyframes glowing {
+  0% {
+    background-color: #2ba805;
+    box-shadow: 0 0 5px #2ba805;
+  }
+  50% {
+    background-color: #49e819;
+    box-shadow: 0 0 20px #49e819;
+  }
+  100% {
+    background-color: #2ba805;
+    box-shadow: 0 0 5px #2ba805;
+  }
+}
+@keyframes glowing {
+  0% {
+    background-color: #2ba805;
+    box-shadow: 0 0 5px #2ba805;
+  }
+  50% {
+    background-color: #49e819;
+    box-shadow: 0 0 20px #49e819;
+  }
+  100% {
+    background-color: #2ba805;
+    box-shadow: 0 0 5px #2ba805;
+  }
+}
